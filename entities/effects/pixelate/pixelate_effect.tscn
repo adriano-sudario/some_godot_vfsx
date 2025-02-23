@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvjfwry14xct2"]
+
+[ext_resource type="Script" path="res://entities/effects/pixelate/pixelate_effect.gd" id="1_0k07b"]
+[ext_resource type="Shader" path="res://entities/effects/pixelate/pixelate_effect.gdshader" id="2_jsbfy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ep3lg"]
+shader = ExtResource("2_jsbfy")
+shader_parameter/pixel_size = 8
+
+[node name="PixelateEffect" type="CanvasLayer"]
+script = ExtResource("1_0k07b")
+pixel_size = 4
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ep3lg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
